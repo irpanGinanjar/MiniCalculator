@@ -1,16 +1,25 @@
-
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
- * @author Kelompok
+ * @author Tugas Kelompok 
  */
 public class FrmCalculator extends javax.swing.JFrame {
 
-  
+    /**
+     * Creates new form TampilanKalkulator
+     */
+    
+    String angka;
+    double jumlah,angka1,angka2;
+    int pilih;
     
     public FrmCalculator() {
         initComponents();
-       
+        angka="";
     }
 
     /**
@@ -40,7 +49,6 @@ public class FrmCalculator extends javax.swing.JFrame {
         btnHapus = new javax.swing.JButton();
         btnBagi = new javax.swing.JButton();
         display = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kalkulator Sederhana");
@@ -185,12 +193,7 @@ public class FrmCalculator extends javax.swing.JFrame {
 
         display.setEditable(false);
         display.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        display.setForeground(new java.awt.Color(204, 204, 255));
         display.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
-        jLabel1.setText("Simple Code ");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -201,26 +204,21 @@ public class FrmCalculator extends javax.swing.JFrame {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, display)
                     .add(layout.createSequentialGroup()
-                        .add(0, 2, Short.MAX_VALUE)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(0, 0, Short.MAX_VALUE)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                             .add(layout.createSequentialGroup()
-                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                    .add(layout.createSequentialGroup()
-                                        .add(btnAngka1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                        .add(btnAngka2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(layout.createSequentialGroup()
-                                        .add(btnAngka5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                        .add(btnAngka6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(layout.createSequentialGroup()
-                                        .add(btnAngka9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(btnAngka0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 72, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(30, 30, 30)))
+                                .add(btnAngka9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(btnAngka0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .add(layout.createSequentialGroup()
+                                .add(btnAngka1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(btnAngka2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(layout.createSequentialGroup()
+                                .add(btnAngka5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(btnAngka6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                             .add(layout.createSequentialGroup()
                                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -273,8 +271,7 @@ public class FrmCalculator extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(btnTambah, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(btnSamadengan, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel1))
+                    .add(btnSamadengan, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -284,73 +281,141 @@ public class FrmCalculator extends javax.swing.JFrame {
     
 
     private void btnSamadenganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSamadenganActionPerformed
-       
-       
+        // TODO add your handling code here:
+        switch(pilih){
+            case 1:
+                angka2 = Double.parseDouble(angka);
+                jumlah = angka1 + angka2;
+                angka = Double.toString(jumlah);
+                display.setText(angka);
+                break;
+            case 2:
+                angka2 = Double.parseDouble(angka);
+                jumlah = angka1 - angka2;
+                angka = Double.toString(jumlah);
+                display.setText(angka);
+                break;
+            case 3:
+                angka2 = Double.parseDouble(angka);
+                jumlah = angka1 * angka2;
+                angka = Double.toString(jumlah);
+                display.setText(angka);
+                break;
+            case 4:
+                angka2 = Double.parseDouble(angka);
+                jumlah = angka1 / angka2;
+                angka = Double.toString(jumlah);
+                display.setText(angka);
+                break;
+                default:
+                break;
+    }                    
     }//GEN-LAST:event_btnSamadenganActionPerformed
 
     private void btnAngka0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngka0ActionPerformed
-        
+        // TODO add your handling code here:
+        angka += "0";
+        display.setText(angka);
     }//GEN-LAST:event_btnAngka0ActionPerformed
 
     private void btnAngka1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngka1ActionPerformed
-       
+        angka += "1";
+        display.setText(angka);        // TODO add your handling code here:
     }//GEN-LAST:event_btnAngka1ActionPerformed
 
     private void btnAngka3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngka3ActionPerformed
-       
-        
+        // TODO add your handling code here:
+        angka += "3";
+        display.setText(angka);
     }//GEN-LAST:event_btnAngka3ActionPerformed
 
     private void btnAngka2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngka2ActionPerformed
-      
+        // TODO add your handling code here:
+        angka += "2";
+        display.setText(angka);
     }//GEN-LAST:event_btnAngka2ActionPerformed
 
     private void btnAngka4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngka4ActionPerformed
-       
+        // TODO add your handling code here:
+        angka += "4";
+        display.setText(angka);
     }//GEN-LAST:event_btnAngka4ActionPerformed
 
     private void btnAngka5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngka5ActionPerformed
-      
+        // TODO add your handling code here:
+        angka += "5";
+        display.setText(angka);
     }//GEN-LAST:event_btnAngka5ActionPerformed
 
     private void btnAngka6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngka6ActionPerformed
-       
+        // TODO add your handling code here:
+        angka += "6";
+        display.setText(angka);
     }//GEN-LAST:event_btnAngka6ActionPerformed
 
     private void btnAngka7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngka7ActionPerformed
-      
+        // TODO add your handling code here:
+        angka += "7";
+        display.setText(angka);
     }//GEN-LAST:event_btnAngka7ActionPerformed
 
     private void btnAngka8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngka8ActionPerformed
-       
+        // TODO add your handling code here:
+        angka += "8";
+        display.setText(angka);
     }//GEN-LAST:event_btnAngka8ActionPerformed
 
     private void btnAngka9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAngka9ActionPerformed
-       
+        // TODO add your handling code here:
+        angka += "9";
+        display.setText(angka);
     }//GEN-LAST:event_btnAngka9ActionPerformed
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
-      
+        // TODO add your handling code here:
+        angka1=Double.parseDouble(angka);
+        display.setText("+");
+        angka="";
+        pilih=1;
     }//GEN-LAST:event_btnTambahActionPerformed
 
     private void btnKurangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKurangActionPerformed
-      
+        // TODO add your handling code here:
+        angka1=Double.parseDouble(angka);
+        display.setText("-");
+        angka="";
+        pilih=2;
     }//GEN-LAST:event_btnKurangActionPerformed
 
     private void btnKaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKaliActionPerformed
-       
+        // TODO add your handling code here:
+        angka1=Double.parseDouble(angka);
+        display.setText("*");
+        angka="";
+        pilih=3;
     }//GEN-LAST:event_btnKaliActionPerformed
 
     private void btnBagiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBagiActionPerformed
-      
+        // TODO add your handling code here:
+        angka1=Double.parseDouble(angka);
+        display.setText("/");
+        angka="";
+        pilih=4;
     }//GEN-LAST:event_btnBagiActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-       
+        // TODO add your handling code here:
+        display.setText("");
+        angka1=0.0;
+        angka2=0.0;
+        jumlah=0.0;
+        angka="";
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void btnKomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKomaActionPerformed
-      
+        // TODO add your handling code here:
+        angka+=".";
+        display.setText(angka);
     }//GEN-LAST:event_btnKomaActionPerformed
 
     /**
@@ -406,6 +471,5 @@ public class FrmCalculator extends javax.swing.JFrame {
     private javax.swing.JButton btnSamadengan;
     private javax.swing.JButton btnTambah;
     private javax.swing.JTextField display;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
